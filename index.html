@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TopCV API Reference</title>
+
+    <!-- Scalar CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        Scalar.createApiReference('#app', {
+            url: './doc.json',
+            theme: 'default',
+            layout: 'modern',
+            pageTitle: 'TopCV API Reference',
+        });
+    </script>
+</body>
+
+</html>

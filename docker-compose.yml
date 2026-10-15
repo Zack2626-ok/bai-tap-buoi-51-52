@@ -1,0 +1,15 @@
+services:
+  api: 
+    container_name: api 
+    image: node:25
+    working_dir: /app/api 
+    volumes:
+      - ./api:/app/api
+      - api_node_modules:/app/api/node_modules
+    ports:
+      - "3000:3000"
+    command: ['sh', '-c', 'npm ci && npm run start:dev']
+
+volumes:
+  api_node_modules:
+  

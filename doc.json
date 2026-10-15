@@ -1,0 +1,2024 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/": {
+            "get": {
+                "operationId": "AppController_getHello",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "App"
+                ]
+            }
+        },
+        "/categories": {
+            "get": {
+                "operationId": "CategoryController_getCategories",
+                "parameters": [],
+                "responses": {
+                    "201": {
+                        "description": "All record has been successfully created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CategoryDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Category"
+                ]
+            },
+            "post": {
+                "operationId": "CategoryController_createCategory",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CategoryCreateDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The record has been successfully created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CategoryDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Category"
+                ]
+            }
+        },
+        "/categories/{id}": {
+            "get": {
+                "operationId": "CategoryController_getCategory",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CategoryDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Category"
+                ]
+            },
+            "put": {
+                "operationId": "CategoryController_replaceCategory",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CategoryReplaceDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully updated.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CategoryDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Category"
+                ]
+            },
+            "delete": {
+                "operationId": "CategoryController_deleteCategory",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully deleted.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CategoryDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Category"
+                ]
+            }
+        },
+        "/provinces": {
+            "get": {
+                "operationId": "ProvinceController_getProvinces",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The records have been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProvinceDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Province"
+                ]
+            }
+        },
+        "/provinces/{id}": {
+            "get": {
+                "operationId": "ProvinceController_getProvince",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProvinceDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Province"
+                ]
+            }
+        },
+        "/wards": {
+            "get": {
+                "operationId": "WardController_getWards",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The records have been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/WardDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Ward"
+                ]
+            }
+        },
+        "/wards/{id}": {
+            "get": {
+                "operationId": "WardController_getWard",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WardDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Ward"
+                ]
+            }
+        },
+        "/companies": {
+            "get": {
+                "operationId": "CompanyController_getCategories",
+                "parameters": [],
+                "responses": {
+                    "201": {
+                        "description": "All record has been successfully created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CompanyDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Company"
+                ]
+            },
+            "post": {
+                "operationId": "CompanyController_createCompany",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CompanyCreateDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The record has been successfully created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CompanyDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Company"
+                ]
+            }
+        },
+        "/companies/{id}": {
+            "get": {
+                "operationId": "CompanyController_getCompany",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CompanyDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Company"
+                ]
+            },
+            "put": {
+                "operationId": "CompanyController_replaceCompany",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CompanyReplaceDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully updated.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CompanyDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Company"
+                ]
+            },
+            "delete": {
+                "operationId": "CompanyController_deleteCompany",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully deleted.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CompanyDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Company"
+                ]
+            }
+        },
+        "/companyAddress": {
+            "get": {
+                "operationId": "CompanyAdressController_getCategories",
+                "parameters": [],
+                "responses": {
+                    "201": {
+                        "description": "All record has been successfully created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CompanyAdressDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "CompanyAdress"
+                ]
+            },
+            "post": {
+                "operationId": "CompanyAdressController_createCompanyAdress",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CompanyAdressCreateDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The record has been successfully created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CompanyAdressDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "CompanyAdress"
+                ]
+            }
+        },
+        "/companyAddress/{id}": {
+            "get": {
+                "operationId": "CompanyAdressController_getCompanyAdress",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CompanyAdressDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "CompanyAdress"
+                ]
+            },
+            "put": {
+                "operationId": "CompanyAdressController_replaceCompanyAdress",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CompanyAdressReplaceDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully updated.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CompanyAdressDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "CompanyAdress"
+                ]
+            },
+            "delete": {
+                "operationId": "CompanyAdressController_deleteCompanyAdress",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully deleted.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CompanyAdressDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "CompanyAdress"
+                ]
+            }
+        },
+        "/candicate": {
+            "get": {
+                "operationId": "CandicateController_getCandicates",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The records have been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CandicateDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Candicate"
+                ]
+            },
+            "post": {
+                "operationId": "CandicateController_createCandicate",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CandicateCreateDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The record has been successfully created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CandicateDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Candicate"
+                ]
+            }
+        },
+        "/candicate/{id}": {
+            "get": {
+                "operationId": "CandicateController_getCandicate",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CandicateDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Candicate"
+                ]
+            },
+            "put": {
+                "operationId": "CandicateController_replaceCandicate",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CandicateReplaceDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully updated.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CandicateDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Candicate"
+                ]
+            },
+            "delete": {
+                "operationId": "CandicateController_deleteCandicate",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully deleted."
+                    }
+                },
+                "tags": [
+                    "Candicate"
+                ]
+            }
+        },
+        "/cv": {
+            "get": {
+                "operationId": "CvController_getCvs",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The records have been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CvDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Cv"
+                ]
+            },
+            "post": {
+                "operationId": "CvController_createCv",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CvCreateDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The record has been successfully created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CvDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Cv"
+                ]
+            }
+        },
+        "/cv/{id}": {
+            "get": {
+                "operationId": "CvController_getCv",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CvDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Cv"
+                ]
+            },
+            "put": {
+                "operationId": "CvController_replaceCv",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CvReplaceDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully updated.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CvDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Cv"
+                ]
+            },
+            "delete": {
+                "operationId": "CvController_deleteCv",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully deleted."
+                    }
+                },
+                "tags": [
+                    "Cv"
+                ]
+            }
+        },
+        "/jobs": {
+            "get": {
+                "operationId": "JobController_getJobs",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The records have been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/JobDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Job"
+                ]
+            },
+            "post": {
+                "operationId": "JobController_createJob",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/JobCreateDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The record has been successfully created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Job"
+                ]
+            }
+        },
+        "/jobs/{id}": {
+            "get": {
+                "operationId": "JobController_getJob",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Job"
+                ]
+            },
+            "put": {
+                "operationId": "JobController_replaceJob",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/JobReplaceDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully updated.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Job"
+                ]
+            },
+            "delete": {
+                "operationId": "JobController_deleteJob",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully deleted."
+                    }
+                },
+                "tags": [
+                    "Job"
+                ]
+            }
+        },
+        "/jobApplication": {
+            "get": {
+                "operationId": "JobApplicationController_getJobApplications",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The records have been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/JobApplicationDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "JobApplication"
+                ]
+            },
+            "post": {
+                "operationId": "JobApplicationController_createJobApplication",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/JobApplicationCreateDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The record has been successfully created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobApplicationDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "JobApplication"
+                ]
+            }
+        },
+        "/jobApplication/{id}": {
+            "get": {
+                "operationId": "JobApplicationController_getJobApplication",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobApplicationDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "JobApplication"
+                ]
+            },
+            "put": {
+                "operationId": "JobApplicationController_replaceJobApplication",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/JobApplicationReplaceDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully updated.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobApplicationDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "JobApplication"
+                ]
+            },
+            "delete": {
+                "operationId": "JobApplicationController_deleteJobApplication",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The record has been successfully deleted."
+                    }
+                },
+                "tags": [
+                    "JobApplication"
+                ]
+            }
+        }
+    },
+    "info": {
+        "title": "Top CV API wwtf ",
+        "description": "The Top CV API description",
+        "version": "1.0",
+        "contact": {}
+    },
+    "tags": [
+        {
+            "name": "Top CV",
+            "description": ""
+        }
+    ],
+    "servers": [],
+    "components": {
+        "schemas": {
+            "CategoryDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "type": "number",
+                        "example": 1
+                    }
+                },
+                "required": [
+                    "name",
+                    "id"
+                ]
+            },
+            "CategoryCreateDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            },
+            "CategoryReplaceDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            },
+            "WardDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "phường gì đấy"
+                    },
+                    "id": {
+                        "type": "number",
+                        "example": 1
+                    }
+                },
+                "required": [
+                    "name",
+                    "id"
+                ]
+            },
+            "ProvinceDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "hà nội"
+                    },
+                    "id": {
+                        "type": "number",
+                        "example": 1
+                    },
+                    "wards": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/WardDto"
+                        }
+                    }
+                },
+                "required": [
+                    "name",
+                    "id",
+                    "wards"
+                ]
+            },
+            "CompanyDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "email": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "phone": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "tax": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "website": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "rate": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "number",
+                        "example": 1
+                    }
+                },
+                "required": [
+                    "name",
+                    "email",
+                    "phone",
+                    "tax",
+                    "website",
+                    "rate",
+                    "id"
+                ]
+            },
+            "CompanyCreateDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "email": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "phone": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "tax": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "website": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "rate": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    }
+                },
+                "required": [
+                    "name",
+                    "email",
+                    "phone",
+                    "tax",
+                    "website",
+                    "rate"
+                ]
+            },
+            "CompanyReplaceDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "email": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "phone": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "tax": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "website": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "rate": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    }
+                },
+                "required": [
+                    "name",
+                    "email",
+                    "phone",
+                    "tax",
+                    "website",
+                    "rate"
+                ]
+            },
+            "CompanyAdressDto": {
+                "type": "object",
+                "properties": {
+                    "company_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "procince_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "ward_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "address_detail": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "type": "number",
+                        "example": 1
+                    }
+                },
+                "required": [
+                    "company_id",
+                    "procince_id",
+                    "ward_id",
+                    "address_detail",
+                    "id"
+                ]
+            },
+            "CompanyAdressCreateDto": {
+                "type": "object",
+                "properties": {
+                    "company_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "procince_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "ward_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "address_detail": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "required": [
+                    "company_id",
+                    "procince_id",
+                    "ward_id",
+                    "address_detail"
+                ]
+            },
+            "CompanyAdressReplaceDto": {
+                "type": "object",
+                "properties": {
+                    "company_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "procince_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "ward_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "address_detail": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "required": [
+                    "company_id",
+                    "procince_id",
+                    "ward_id",
+                    "address_detail"
+                ]
+            },
+            "CandicateDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "phone": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "email": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "gender": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "province_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "ward_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "address_detail": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "type": "number",
+                        "example": 1
+                    }
+                },
+                "required": [
+                    "name",
+                    "phone",
+                    "email",
+                    "gender",
+                    "province_id",
+                    "ward_id",
+                    "address_detail",
+                    "id"
+                ]
+            },
+            "CandicateCreateDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "phone": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "email": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "gender": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "province_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "ward_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "address_detail": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "required": [
+                    "name",
+                    "phone",
+                    "email",
+                    "gender",
+                    "province_id",
+                    "ward_id",
+                    "address_detail"
+                ]
+            },
+            "CandicateReplaceDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "phone": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "email": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "gender": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "province_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "ward_id": {
+                        "type": "number",
+                        "example": 1,
+                        "nullable": true
+                    },
+                    "address_detail": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "required": [
+                    "name",
+                    "phone",
+                    "email",
+                    "gender",
+                    "province_id",
+                    "ward_id",
+                    "address_detail"
+                ]
+            },
+            "CvDto": {
+                "type": "object",
+                "properties": {
+                    "candidate_id": {
+                        "$ref": "#/components/schemas/CandicateDto"
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "file_name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "file_key": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "example": "2026-10-15T07:00:00.000Z",
+                        "format": "date-time"
+                    },
+                    "id": {
+                        "type": "number",
+                        "example": 1
+                    }
+                },
+                "required": [
+                    "candidate_id",
+                    "title",
+                    "file_name",
+                    "file_key",
+                    "created_at",
+                    "id"
+                ]
+            },
+            "CvCreateDto": {
+                "type": "object",
+                "properties": {
+                    "candidate_id": {
+                        "$ref": "#/components/schemas/CandicateDto"
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "file_name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "file_key": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "example": "2026-10-15T07:00:00.000Z",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "candidate_id",
+                    "title",
+                    "file_name",
+                    "file_key",
+                    "created_at"
+                ]
+            },
+            "CvReplaceDto": {
+                "type": "object",
+                "properties": {
+                    "candidate_id": {
+                        "$ref": "#/components/schemas/CandicateDto"
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "file_name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "file_key": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "example": "2026-10-15T07:00:00.000Z",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "candidate_id",
+                    "title",
+                    "file_name",
+                    "file_key",
+                    "created_at"
+                ]
+            },
+            "JobDto": {
+                "type": "object",
+                "properties": {
+                    "category_id": {
+                        "$ref": "#/components/schemas/CategoryDto"
+                    },
+                    "company_id": {
+                        "$ref": "#/components/schemas/CompanyDto"
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "requirement": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "benefit": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "experience": {
+                        "type": "number",
+                        "example": 2
+                    },
+                    "due_date": {
+                        "type": "string",
+                        "example": "2026-12-31"
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "example": 3
+                    },
+                    "min_salary": {
+                        "type": "number",
+                        "example": 15000000
+                    },
+                    "max_salary": {
+                        "type": "number",
+                        "example": 25000000
+                    },
+                    "qualification": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "work_type": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "working_time": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "type": "number",
+                        "example": 1
+                    }
+                },
+                "required": [
+                    "category_id",
+                    "company_id",
+                    "title",
+                    "description",
+                    "requirement",
+                    "benefit",
+                    "experience",
+                    "due_date",
+                    "quantity",
+                    "min_salary",
+                    "max_salary",
+                    "qualification",
+                    "work_type",
+                    "working_time",
+                    "id"
+                ]
+            },
+            "JobCreateDto": {
+                "type": "object",
+                "properties": {
+                    "category_id": {
+                        "$ref": "#/components/schemas/CategoryDto"
+                    },
+                    "company_id": {
+                        "$ref": "#/components/schemas/CompanyDto"
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "requirement": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "benefit": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "experience": {
+                        "type": "number",
+                        "example": 2
+                    },
+                    "due_date": {
+                        "type": "string",
+                        "example": "2026-12-31"
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "example": 3
+                    },
+                    "min_salary": {
+                        "type": "number",
+                        "example": 15000000
+                    },
+                    "max_salary": {
+                        "type": "number",
+                        "example": 25000000
+                    },
+                    "qualification": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "work_type": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "working_time": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "required": [
+                    "category_id",
+                    "company_id",
+                    "title",
+                    "description",
+                    "requirement",
+                    "benefit",
+                    "experience",
+                    "due_date",
+                    "quantity",
+                    "min_salary",
+                    "max_salary",
+                    "qualification",
+                    "work_type",
+                    "working_time"
+                ]
+            },
+            "JobReplaceDto": {
+                "type": "object",
+                "properties": {
+                    "category_id": {
+                        "$ref": "#/components/schemas/CategoryDto"
+                    },
+                    "company_id": {
+                        "$ref": "#/components/schemas/CompanyDto"
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "requirement": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "benefit": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "experience": {
+                        "type": "number",
+                        "example": 2
+                    },
+                    "due_date": {
+                        "type": "string",
+                        "example": "2026-12-31"
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "example": 3
+                    },
+                    "min_salary": {
+                        "type": "number",
+                        "example": 15000000
+                    },
+                    "max_salary": {
+                        "type": "number",
+                        "example": 25000000
+                    },
+                    "qualification": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "work_type": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "working_time": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "required": [
+                    "category_id",
+                    "company_id",
+                    "title",
+                    "description",
+                    "requirement",
+                    "benefit",
+                    "experience",
+                    "due_date",
+                    "quantity",
+                    "min_salary",
+                    "max_salary",
+                    "qualification",
+                    "work_type",
+                    "working_time"
+                ]
+            },
+            "JobApplicationDto": {
+                "type": "object",
+                "properties": {
+                    "job_id": {
+                        "$ref": "#/components/schemas/JobDto"
+                    },
+                    "candidate_id": {
+                        "$ref": "#/components/schemas/CandicateDto"
+                    },
+                    "cv_id": {
+                        "$ref": "#/components/schemas/CvDto"
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "status": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "type": "number",
+                        "example": 1
+                    }
+                },
+                "required": [
+                    "job_id",
+                    "candidate_id",
+                    "cv_id",
+                    "description",
+                    "status",
+                    "id"
+                ]
+            },
+            "JobApplicationCreateDto": {
+                "type": "object",
+                "properties": {
+                    "job_id": {
+                        "$ref": "#/components/schemas/JobDto"
+                    },
+                    "candidate_id": {
+                        "$ref": "#/components/schemas/CandicateDto"
+                    },
+                    "cv_id": {
+                        "$ref": "#/components/schemas/CvDto"
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "status": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "required": [
+                    "job_id",
+                    "candidate_id",
+                    "cv_id",
+                    "description",
+                    "status"
+                ]
+            },
+            "JobApplicationReplaceDto": {
+                "type": "object",
+                "properties": {
+                    "job_id": {
+                        "$ref": "#/components/schemas/JobDto"
+                    },
+                    "candidate_id": {
+                        "$ref": "#/components/schemas/CandicateDto"
+                    },
+                    "cv_id": {
+                        "$ref": "#/components/schemas/CvDto"
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "status": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "required": [
+                    "job_id",
+                    "candidate_id",
+                    "cv_id",
+                    "description",
+                    "status"
+                ]
+            }
+        }
+    }
+}
